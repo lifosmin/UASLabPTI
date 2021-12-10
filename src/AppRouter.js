@@ -14,7 +14,6 @@ const AppRouter = () => {
           <Route path="/News" render={() => <Article type="news" />} />
           <Route path="/Blogs" render={() => <Article type="blogs" />} />
           <Route path="/Developers" component={Article} />
-          <Route path="/404" component={Article} />
           <Route path="/Login" component={Article} />
           <Route
             path="/Logout"
@@ -23,6 +22,7 @@ const AppRouter = () => {
               return <Redirect to="/" />;
             }}
           />
+          <Route path="/*" component={Article} />
           <Route path="/" render={() => <Redirect to="/News" />} />
         </Switch>
       </div>

@@ -13,4 +13,29 @@ $card-width: 400px;
     overflow: hidden;
     border-radius: 5px;
   }
+
+  &__category,
+  &__title h2,
+  &__date,
+  &__preview {
+    margin: 0;
+  }
+
+  &__category {
+    margin-top: 0.5rem !important;
+  }
+
+  &__title {
+    margin: 1rem 0;
+    text-decoration: none;
+    color: $text-primary;
+  }
+
+  &__date {
+    margin-bottom: 0.5rem !important;
+  }
+
+  &__preview {
+    text-align: justify;
+  }
 }

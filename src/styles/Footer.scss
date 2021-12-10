@@ -1,7 +1,9 @@
 @import "variables";
 
 footer {
-  width: 100%;
   background-color: grey;
   padding: 0 var(--container-pad);
+  h1 {
+    margin: 0;
+  }
 }
