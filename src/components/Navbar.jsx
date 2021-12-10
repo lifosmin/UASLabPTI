@@ -12,6 +12,8 @@ const Navbar = () => {
 
   window.addEventListener("scroll", (e) => handleStickScroll(e));
 
+  const [opened, setOpened] = useState(false);
+
   return (
     <nav className={navbarPos ? "fixed" : ""}>
       <Flex
@@ -36,6 +38,14 @@ const Navbar = () => {
           <NavLink className="link" to="/Developers">
             DEVELOPERS
           </NavLink>
+          <div
+            onClick={() => setOpened(!opened)}
+            className={opened ? "hamburger active" : "hamburger"}
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </Box>
       </Flex>
     </nav>
