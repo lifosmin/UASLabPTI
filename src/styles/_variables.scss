@@ -1,3 +1,20 @@
 $primary: white;
 $secondary: grey;
-$container-pad: 10rem;
+$text-dark: #000000;
+
+:root{
+    --container-pad: 10rem;
+}
+
+
+@media (max-width: 768px) {
+    :root{
+        --container-pad: 7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root{
+        --container-pad: 3rem;
+    } 
+}

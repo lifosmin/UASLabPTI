@@ -2,6 +2,6 @@
 
 .app {
   &__container {
-    padding: 7rem $container-pad;
+    padding: 7rem var(--container-pad);
   }
 }

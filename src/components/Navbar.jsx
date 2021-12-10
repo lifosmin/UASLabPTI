@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const [opened, setOpened] = useState(false);
 
+
   return (
     <nav className={navbarPos ? "fixed" : ""}>
       <Flex
@@ -38,16 +39,37 @@ const Navbar = () => {
           <NavLink className="link" to="/Developers">
             DEVELOPERS
           </NavLink>
-          <div
-            onClick={() => setOpened(!opened)}
+          
+        </Box>
+        <div
+            onClick={() => {
+              setOpened(!opened);
+              
+            }}
             className={opened ? "hamburger active" : "hamburger"}
           >
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
           </div>
-        </Box>
       </Flex>
+
+      <Box className={`mobile-nav ${opened ? "mobile-nav-show" : "mobile-nav-hide"}`} >
+        <Box
+          className="mobile-nav-container"
+          style={{}}
+        >
+          <NavLink className="link-mobile" to="/News">
+            NEWS
+          </NavLink>
+          <NavLink className="link-mobile" to="/Blogs">
+            BLOGS
+          </NavLink>
+          <NavLink className="link-mobile" to="/Developers">
+            DEVELOPERS
+          </NavLink>
+        </Box>
+      </Box>
     </nav>
   );
 };
