@@ -1,0 +1,7 @@
+@import "variables";
+
+.app {
+  &__container {
+    padding: 7rem $container-pad;
+  }
+}

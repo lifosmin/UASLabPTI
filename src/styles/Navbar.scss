@@ -1,0 +1,49 @@
+@import "variables";
+
+nav {
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+  z-index: 99;
+  position: absolute;
+  color: black;
+  height: 5rem;
+}
+
+.navbar__container {
+  padding: 0 $container-pad;
+}
+
+nav.fixed {
+  position: fixed;
+  color: red;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 4rem;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.nav-items .link {
+  position: relative;
+  margin: 0 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.nav-items .link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  border-bottom: 2.5px solid black;
+  transition: all 0.3s;
+}
+
+.scrolled .link::after {
+  border-bottom: 2.5px solid #ef504d !important;
+}
+
+.nav-items .link:hover::after {
+  width: 100%;
+}
