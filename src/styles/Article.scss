@@ -1,9 +1,17 @@
 @import "variables";
 
-$card-width: 400px;
+:root {
+  --card-width: 400px;
+}
+
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .card {
-  width: $card-width;
+  width: var(--card-width);
+  margin: 1rem calc((100% / 2 - var(--card-width)) / 2);
 
   &__img {
     width: 100%;
@@ -12,6 +20,12 @@ $card-width: 400px;
     align-items: center;
     overflow: hidden;
     border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__category,
@@ -22,7 +36,7 @@ $card-width: 400px;
   }
 
   &__category {
-    margin-top: 0.5rem !important;
+    margin-top: 0.8rem !important;
   }
 
   &__title {
