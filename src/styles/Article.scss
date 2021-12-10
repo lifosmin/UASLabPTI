@@ -28,7 +28,7 @@ $card-width: 400px;
   &__title {
     margin: 1rem 0;
     text-decoration: none;
-    color: $text-primary;
+    color: var(--text-primary);
   }
 
   &__date {
