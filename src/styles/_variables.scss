@@ -4,7 +4,11 @@ $text-dark: #000000;
 
 :root {
   --container-pad: 10rem;
-  --text-primary: #000000;
+  --text-primary: rgb(239, 80, 77);
+  --btn-primary: rgb(239, 80, 77);
+  --btn-pbg: rgba(239, 80, 77, 0.05);
+  --btn-pshadow: rgba(214, 57, 55, 0.3);
+  --btn-ptext: white;
 
   /* breakpoints lg */
   @media screen and (max-width: 62em) {

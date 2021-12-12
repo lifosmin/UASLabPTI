@@ -14,3 +14,9 @@ export const getDeveloper = async () => {
   const res = await axios.get("/developer.json");
   return res.data;
 };
+
+export const validateAuth = () => {
+  const data = JSON.parse(localStorage.getItem("logData"));
+  if (data !== null) return true;
+  else return false;
+};

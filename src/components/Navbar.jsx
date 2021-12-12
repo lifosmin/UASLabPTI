@@ -8,8 +8,10 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
+import { MyButton } from "./Button";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
+import { validateAuth } from "../utils/service";
 
 const Navbar = () => {
   const [navbarPos, setNavbarPos] = useState(false);
@@ -32,10 +34,7 @@ const Navbar = () => {
         <NavLink to="/" className="nav-brand">
           <Heading>Berita PTI</Heading>
         </NavLink>
-        <Box
-          className={navbarPos ? "nav-items scrolled" : "nav-items"}
-          style={{}}
-        >
+        <Box className={navbarPos ? "nav-items scrolled" : "nav-items"}>
           <NavLink className="link" to="/News">
             NEWS
           </NavLink>
@@ -46,13 +45,9 @@ const Navbar = () => {
             DEVELOPERS
           </NavLink>
         </Box>
-        <InputGroup width="20%" className="nav__search">
-          <InputRightElement
-            pointerEvents="none"
-            children={<Search2Icon color="gray.300" />}
-          />
-          <Input type="tel" placeholder="search article" />
-        </InputGroup>
+        <NavLink to="/login">
+          <MyButton className="nav-login">Login</MyButton>
+        </NavLink>
         <div
           onClick={() => {
             setOpened(!opened);
