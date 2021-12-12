@@ -5,16 +5,17 @@ $text-dark: #000000;
 :root {
   --container-pad: 10rem;
   --text-primary: #000000;
-}
 
-@media (max-width: 768px) {
-  :root {
+  /* breakpoints lg */
+  @media screen and (max-width: 62em) {
     --container-pad: 7rem;
   }
-}
-
-@media (max-width: 576px) {
-  :root {
-    --container-pad: 3rem;
+  /* breakpoints md */
+  @media screen and (max-width: 48em) {
+    --container-pad: 5rem;
+  }
+  /* breakpoints sm */
+  @media screen and (max-width: 30em) {
+    --container-pad: 1rem;
   }
 }

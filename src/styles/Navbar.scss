@@ -9,18 +9,36 @@ nav {
   position: absolute;
   color: var(--text-primary);
   height: 5rem;
+
+  .nav-brand,
+  .link {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all ease-in-out 0.3s;
+  }
+
+  .nav-items {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.fixed {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 4rem;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+
+  .nav-brand,
+  .link {
+    color: red !important;
+  }
 }
 
 .navbar__container {
   padding: 0 var(--container-pad);
-}
-
-nav.fixed {
-  position: fixed;
-  color: red;
-  background-color: rgba(255, 255, 255, 0.9);
-  height: 4rem;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .nav-items .link {
@@ -28,6 +46,7 @@ nav.fixed {
   margin: 0 1rem;
   font-weight: 700;
   font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .nav-items .link::after {
@@ -62,11 +81,15 @@ nav.fixed {
   background-color: #101010;
 }
 
-.mobile-nav{
+.mobile-nav {
   display: none;
 }
 
 @media (max-width: 992px) {
+  .nav__search {
+    display: none !important;
+  }
+
   .nav-items {
     // position: fixed;
     // left: -115%;
@@ -81,11 +104,11 @@ nav.fixed {
     display: none;
   }
 
-  .mobile-nav{
+  .mobile-nav {
     display: block;
   }
 
-  .mobile-nav-show{
+  .mobile-nav-show {
     position: fixed;
     width: 75%;
     background-color: white;
@@ -94,39 +117,34 @@ nav.fixed {
     left: 0%;
     transition: 0.5s;
   }
-  
-  .mobile-nav-hide{
+
+  .mobile-nav-hide {
     transform: translate(-100%, 0);
     transition: 0.5s;
     height: 100vh;
     width: 75%;
-  
   }
-  
-  .mobile-nav-container{
+
+  .mobile-nav-container {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
-  .link-mobile{
+
+  .link-mobile {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 700;
     font-size: 27px;
     padding: 20px;
     transition: 0.2s;
-    &:hover{
+    &:hover {
       text-shadow: -1px 0px 7px rgba(154, 255, 80, 1);
       transition: 0.2s;
     }
   }
-
-
-  
-
 
   .hamburger {
     display: block;

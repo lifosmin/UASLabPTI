@@ -2,6 +2,38 @@
 
 :root {
   --card-width: 400px;
+  --card-col: 2;
+  --title-row: 2;
+  --content-row: 3;
+  --mx-card: 1rem;
+
+  /* breakpoints 2xl */
+  @media screen and (max-width: 96em) {
+    --card-width: 400px;
+  }
+  /* breakpoints xl */
+  @media screen and (max-width: 80em) {
+    --card-width: 320px;
+    --card-col: 2;
+  }
+  /* breakpoints lg */
+  @media screen and (max-width: 62em) {
+    --card-width: 280px;
+    --title-row: 1;
+    --content-row: 2;
+    --mx-card: 2rem;
+  }
+  /* breakpoints md */
+  @media screen and (max-width: 48em) {
+    --card-width: 500px;
+    --card-col: 1;
+  }
+  /* breakpoints sm */
+  @media screen and (max-width: 30em) {
+    --card-width: 350px;
+    --card-col: 1;
+    --mx-card: 1rem;
+  }
 }
 
 .article {
@@ -9,9 +41,16 @@
   flex-wrap: wrap;
 }
 
+.dummy-card {
+  width: var(--card-width);
+  margin: var(--mx-card) calc((100% / var(--card-col) - var(--card-width)) / 2);
+  height: 500px;
+  border-radius: 5px !important;
+}
+
 .card {
   width: var(--card-width);
-  margin: 1rem calc((100% / 2 - var(--card-width)) / 2);
+  margin: var(--mx-card) calc((100% / var(--card-col) - var(--card-width)) / 2);
 
   &__img {
     width: 100%;
@@ -43,6 +82,11 @@
     margin: 1rem 0;
     text-decoration: none;
     color: var(--text-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: var(--title-row);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__date {
@@ -51,5 +95,10 @@
 
   &__preview {
     text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--content-row);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

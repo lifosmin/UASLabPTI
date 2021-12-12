@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import { Flex, Heading, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Box,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { Search2Icon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
 
 const Navbar = () => {
   const [navbarPos, setNavbarPos] = useState(false);
+  const [opened, setOpened] = useState(false);
 
   const handleStickScroll = (e) => {
     window.scrollY > 0 ? setNavbarPos(true) : setNavbarPos(false);
   };
 
   window.addEventListener("scroll", (e) => handleStickScroll(e));
-
-  const [opened, setOpened] = useState(false);
-
 
   return (
     <nav className={navbarPos ? "fixed" : ""}>
@@ -23,9 +29,9 @@ const Navbar = () => {
         justifyContent="space-between"
         className="navbar__container"
       >
-        <Heading fontSize={{ base: "1rem", md: "1.5rem" }} fontWeight="800">
-          Berita PTI
-        </Heading>
+        <NavLink to="/" className="nav-brand">
+          <Heading>Berita PTI</Heading>
+        </NavLink>
         <Box
           className={navbarPos ? "nav-items scrolled" : "nav-items"}
           style={{}}
@@ -39,26 +45,32 @@ const Navbar = () => {
           <NavLink className="link" to="/Developers">
             DEVELOPERS
           </NavLink>
-          
         </Box>
+        <InputGroup width="20%" className="nav__search">
+          <InputRightElement
+            pointerEvents="none"
+            children={<Search2Icon color="gray.300" />}
+          />
+          <Input type="tel" placeholder="search article" />
+        </InputGroup>
         <div
-            onClick={() => {
-              setOpened(!opened);
-              
-            }}
-            className={opened ? "hamburger active" : "hamburger"}
-          >
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+          onClick={() => {
+            setOpened(!opened);
+          }}
+          className={opened ? "hamburger active" : "hamburger"}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
       </Flex>
 
-      <Box className={`mobile-nav ${opened ? "mobile-nav-show" : "mobile-nav-hide"}`} >
-        <Box
-          className="mobile-nav-container"
-          style={{}}
-        >
+      <Box
+        className={`mobile-nav ${
+          opened ? "mobile-nav-show" : "mobile-nav-hide"
+        }`}
+      >
+        <Box className="mobile-nav-container" style={{}}>
           <NavLink className="link-mobile" to="/News">
             NEWS
           </NavLink>
