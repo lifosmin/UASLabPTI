@@ -2,8 +2,29 @@
 
 footer {
   background-color: grey;
-  padding: 0 var(--container-pad);
-  h1 {
-    margin: 0;
+  padding: 50px var(--container-pad);
+  
+  
+}
+.footer{
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__logo{
+    justify-content: space-between;
+    flex-direction: row;
+
+  }
+  &__lv{
+    height: 100%;
+    width: 1px;
+    background-color: black;
+  }
+  &__navigation{
+    flex-direction: column;
+    margin-left: 25px;
+  }
+  &__copyright{
+    padding-left: 10px;
   }
 }
