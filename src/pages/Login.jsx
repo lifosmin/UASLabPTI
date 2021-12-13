@@ -19,31 +19,32 @@ const Login = () => {
   const location = useLocation();
 
   const onSubmit = (data) => {
+    let status = false;
     for (let i = 0; i < accoutList.length; i++) {
       if (
         data.email === accoutList[i].email &&
         data.password === accoutList[i].password
       ) {
-        localStorage.setItem("logged", true);
-        localStorage.setItem("logData", JSON.stringify(accoutList[i]));
-        window.location.href = "/Blogs";
+        status = true;
         break;
-      } else {
-        history.push("/login", {
-          message: "You have entered incorrect email or password",
-        });
       }
+    }
+
+    if (status) {
+      localStorage.setItem("logged", true);
+      localStorage.setItem("logData", JSON.stringify(accoutList[i]));
+      window.location.href = "/Blogs";
+    } else {
+      history.push("/Login", {
+        status: "error",
+        message: "You have entered incorrect email or password",
+      });
     }
   };
 
   return (
     <div className="login">
-      {location.state && (
-        <Alert status="error" width="max-content" borderRadius="10px" mb="1rem">
-          <AlertIcon />
-          <AlertTitle>{location.state.message}</AlertTitle>
-        </Alert>
-      )}
+      {location.state && location.state.status}
       <div className="login__card">
         {/* <div className="login__card__header">
           <h1 className="login_card_title">Login</h1>

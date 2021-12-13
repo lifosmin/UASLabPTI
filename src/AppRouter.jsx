@@ -32,7 +32,17 @@ const AppRouter = () => {
               path="/Logout"
               render={() => {
                 localStorage.clear();
-                return <Redirect to="/" />;
+                return (
+                  <Redirect
+                    to={{
+                      pathname: "/Login",
+                      state: {
+                        status: "success",
+                        message: "You have successfully logout",
+                      },
+                    }}
+                  />
+                );
               }}
             />
             <Route
