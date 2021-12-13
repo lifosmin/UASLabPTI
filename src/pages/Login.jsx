@@ -27,6 +27,7 @@ const Login = () => {
         localStorage.setItem("logged", true);
         localStorage.setItem("logData", JSON.stringify(accoutList[i]));
         window.location.href = "/Blogs";
+        break;
       } else {
         history.push("/login", {
           message: "You have entered incorrect email or password",
