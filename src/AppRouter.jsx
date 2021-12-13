@@ -7,6 +7,7 @@ import "./styles/App.scss";
 import Developer from "./pages/Developer";
 import Errors from "./pages/Errors";
 import Login from "./pages/Login";
+import Post from "./pages/Post";
 import ProtectedRouter from "./ProtectedRouter";
 import { AnimatePresence } from "framer-motion";
 
@@ -19,12 +20,14 @@ const AppRouter = () => {
       <div className="app__container">
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
+            <Route path="/Post/:type/:id" component={Post} />
             <Route path="/News" render={() => <Article type="news" />} />
             <ProtectedRouter path="/Blogs">
               <Article type="blogs" />
             </ProtectedRouter>
             <Route path="/Developers" component={Developer} />
             <Route path="/Login" component={Login} />
+            <Route path="/404" exact component={Errors} />
             <Route
               path="/Logout"
               render={() => {
@@ -32,7 +35,6 @@ const AppRouter = () => {
                 return <Redirect to="/" />;
               }}
             />
-            <Route path="/404" exact component={Errors} />
             <Route
               path="/Logout"
               exact

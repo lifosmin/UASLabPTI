@@ -14,11 +14,7 @@ const cardVariants = {
   rest: { y: 100, opacity: 0 },
 };
 
-const imgVariants = {
-  rest: {},
-};
-
-const Card = ({ article, index }) => {
+const Card = ({ article, index, type }) => {
   return (
     <motion.div
       className="card"
@@ -31,7 +27,7 @@ const Card = ({ article, index }) => {
       }}
       exit="exit"
     >
-      <a href="/awdawd" className="card__img">
+      <a href={`/Post/${type}/${article.id}`} className="card__img">
         <motion.img
           src={article.image}
           alt={article.title}
@@ -42,12 +38,12 @@ const Card = ({ article, index }) => {
         />
       </a>
       <p className="card__category">{article.category.join(", ")}</p>
-      <a href="#" className="card__title">
+      <a href={`/Post/${type}/${article.id}`} className="card__title">
         <h2>{article.title}</h2>
       </a>
       <p className="card__date">{article.date}</p>
       <p className="card__preview">{article.content}</p>
-      <a href="">Read more</a>
+      <a href={`/Post/${type}/${article.id}`}>Read more</a>
     </motion.div>
   );
 };
@@ -87,7 +83,7 @@ const Article = ({ type }) => {
     return (
       <div className="article">
         {article.map((data, index) => (
-          <Card article={data} key={index} index={index} />
+          <Card article={data} key={index} index={index} type={type} />
         ))}
       </div>
     );

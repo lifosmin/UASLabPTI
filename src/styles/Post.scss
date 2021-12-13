@@ -1,0 +1,40 @@
+@import "variables";
+
+.post {
+  min-height: calc(100vh - 14rem);
+  h1,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__author {
+    text-align: center;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+    img {
+      width: 60%;
+      height: auto;
+      border-radius: 5px;
+    }
+  }
+
+  &__content {
+    margin-top: 1rem !important;
+    text-align: justify;
+  }
+
+  &__cat {
+    margin-top: 2rem !important;
+  }
+}
