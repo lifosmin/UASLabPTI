@@ -96,4 +96,8 @@ const accoutList = [
     email: "bonifasius.finantyo@student.umn.ac.id",
     password: "12345678",
   },
+  {
+    email: "admin@beritapti.umn.ac.id",
+    password: "12345678",
+  },
 ];
