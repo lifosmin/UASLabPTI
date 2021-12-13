@@ -7,7 +7,7 @@ const ProtectedRouter = (props, { options }) => {
   if (status) {
     return <Route {...options}>{props.children}</Route>;
   } else {
-    return <Redirect to="/login" />;
+    return <Redirect to="/Login" />;
   }
 };
 

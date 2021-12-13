@@ -17,9 +17,8 @@ const cardVariants = {
 const imgVariants = {
   rest: { borderRadius: 0 },
   hover: {
-    scale: 1.3,
-    y: 20,
-    transition: { delay: 0.2, ...transition },
+    scale: 1.1,
+    transition: { delay: 0.2, duration: 1, ease: transition.ease },
   },
 };
 

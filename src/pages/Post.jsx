@@ -32,8 +32,10 @@ const Post = () => {
         <div className="post__img">
           <img src={post.image} alt="Article image" />
         </div>
-        {post.content.map((data) => (
-          <p className="post__content">{data}</p>
+        {post.content.map((data, index) => (
+          <p className="post__content" key={index}>
+            {data}
+          </p>
         ))}
         <p className="post__cat">Category: {post.category.join(", ")}</p>
       </div>

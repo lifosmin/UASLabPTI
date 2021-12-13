@@ -24,6 +24,7 @@
 
       label {
         width: 100%;
+        margin-bottom: 0.2rem;
         &:not(:first-child) {
           margin-top: 1rem;
         }
@@ -47,5 +48,14 @@
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: bold;
+  }
+
+  .card-error {
+    text-align: left !important;
+    margin-right: auto;
+    background-color: var(--error-text);
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.2rem;
   }
 }

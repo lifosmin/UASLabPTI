@@ -9,6 +9,8 @@ $text-dark: #000000;
   --btn-pbg: rgba(239, 80, 77, 0.05);
   --btn-pshadow: rgba(214, 57, 55, 0.3);
   --btn-ptext: white;
+  --error-text: rgb(254, 215, 215);
+  --sec-color: #252958;
 
   /* breakpoints lg */
   @media screen and (max-width: 62em) {
