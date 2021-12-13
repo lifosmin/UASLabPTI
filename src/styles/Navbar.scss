@@ -22,6 +22,11 @@ nav {
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .nav-brand {
+    display: flex;
+    align-items: center !important;
+  }
 }
 
 .fixed {

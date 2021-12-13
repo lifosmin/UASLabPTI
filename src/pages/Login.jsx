@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Flex, Text, Alert, AlertTitle } from "@chakra-ui/react";
 import { AlertIcon } from "@chakra-ui/react";
 import { MyButton } from "../components/Button";
@@ -35,6 +35,10 @@ const Login = () => {
 
   const history = useHistory();
   const location = useLocation();
+
+  useEffect(() => {
+    document.title = "Login | Berita PTI";
+  }, []);
 
   const onSubmit = (data) => {
     let status = false;

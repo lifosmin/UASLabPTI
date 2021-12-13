@@ -29,7 +29,7 @@ const Footer = () => {
               Developers
             </NavLink>
           </Flex>
-          <Flex className="footer__copyright">Copyright@2021 Kelompok 1</Flex>
+          <Flex className="footer__copyright">Copyright© 2021 Kelompok 1</Flex>
         </Flex>
         <Flex w="30%" className="footer__aboutus"></Flex>
       </Flex>

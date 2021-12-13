@@ -43,7 +43,11 @@ const Card = ({ article, index, type }) => {
       </a>
       <p className="card__date">{article.date}</p>
       <p className="card__preview">{article.content}</p>
-      <a href={`/Post/${type}/${article.id}`}>Read more</a>
+      <div className="readmore">
+        <a className="readmore__link" href={`/Post/${type}/${article.id}`}>
+          Read more...
+        </a>
+      </div>
     </motion.div>
   );
 };
@@ -53,6 +57,8 @@ const Article = ({ type }) => {
   const [isLoaded, setIsloaded] = useState(false);
 
   useEffect(() => {
+    document.title = `${type === "news" ? "News" : "Blogs"} List | Berita PTI`;
+
     try {
       if (type === "news") {
         getNews().then((response) => {

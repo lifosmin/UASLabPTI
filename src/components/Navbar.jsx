@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Heading, Box } from "@chakra-ui/react";
+import { Flex, Heading, Box, Image } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import { MyButton } from "./Button";
 import { NavLink } from "react-router-dom";
@@ -26,7 +26,8 @@ const Navbar = () => {
         className="navbar__container"
       >
         <NavLink to="/" className="nav-brand">
-          <Heading>Berita PTI</Heading>
+          <Image src="./beritaPTIicon.ico" height="2rem" mt="5px" mr="0.2rem" />
+          <Heading margin="0">Berita PTI</Heading>
         </NavLink>
         <Box className={navbarPos ? "nav-items scrolled" : "nav-items"}>
           <NavLink className="link" to="/News">

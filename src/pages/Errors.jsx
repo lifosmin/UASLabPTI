@@ -5,7 +5,7 @@ import "../styles/Errors.scss";
 
 const Errors = () => {
   useEffect(() => {
-    document.title = "404 - Page Not Found";
+    document.title = "404 | Berita PTI";
   }, []);
 
   return (
@@ -41,7 +41,7 @@ const Errors = () => {
             fontWeight="500"
             fontSize={{ base: "2rem", md: "2.5rem" }}
           >
-            Oops kamu nyasar!
+            Ooops you're on the wrong way
           </Heading>
           <Text
             color="#626F7E"
@@ -50,15 +50,15 @@ const Errors = () => {
             mt="1rem"
             mb="1rem"
           >
-            Halaman yang kamu cari tidak dapat ditemukan. Silakan kembali ke
-            halaman sebelumnya atau coba telusuri halaman lainnya.
+            The page you are looking for could not be found. Please return to
+            the previous page or try to browse other pages.
           </Text>
           <NavLink to="/">
             <Text
               className="navigasi"
               fontSize={{ base: "0.8rem", md: "1.2rem" }}
             >
-              Kembali Ke Beranda
+              Back to Home
             </Text>
           </NavLink>
         </Box>

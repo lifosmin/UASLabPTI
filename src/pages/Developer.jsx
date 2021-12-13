@@ -58,6 +58,8 @@ const Developer = () => {
   const [isLoaded, setIsloaded] = useState(false);
 
   useEffect(() => {
+    document.title = "Developers | Berita PTI";
+
     try {
       getDeveloper().then((response) => {
         setDeveloper(response);

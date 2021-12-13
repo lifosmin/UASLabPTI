@@ -101,4 +101,26 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .readmore {
+    display: flex;
+    justify-content: flex-end;
+
+    &__link {
+      color: #285d99;
+      transition: all 0.1s ease-in-out;
+      text-decoration: underline;
+
+      &:hover {
+        color: #1e80f0;
+
+        &::before {
+          content: url("./arrow.svg");
+          fill: #285d99;
+          position: absolute;
+          transform: translateX(-2rem);
+        }
+      }
+    }
+  }
 }
