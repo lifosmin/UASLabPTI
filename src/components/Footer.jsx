@@ -1,11 +1,12 @@
 import React from "react";
 import "../styles/Footer.scss";
+import { NavLink } from "react-router-dom";
 import {
   Flex,
   Link,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink
+  BreadcrumbLink,
 } from "@chakra-ui/react";
 
 const Footer = () => {
@@ -18,17 +19,19 @@ const Footer = () => {
         </Flex>
         <Flex w="50%" className="footer__navigation">
           <Flex>
-            <Link p="10px">News</Link>
-            <Link p="10px">Blogs</Link>
-            <Link p="10px">Developers</Link>
+            <NavLink p="10px" className="link" to="/News">
+              News
+            </NavLink>
+            <NavLink p="10px" className="link" to="/Blogs">
+              Blogs
+            </NavLink>
+            <NavLink p="10px" className="link" to="/Developers">
+              Developers
+            </NavLink>
           </Flex>
-          <Flex className="footer__copyright">
-            Copyright@2021 Kelompok 1
-          </Flex>
+          <Flex className="footer__copyright">Copyright@2021 Kelompok 1</Flex>
         </Flex>
-        <Flex w="30%" className="footer__aboutus">
-          
-        </Flex>
+        <Flex w="30%" className="footer__aboutus"></Flex>
       </Flex>
     </footer>
   );
