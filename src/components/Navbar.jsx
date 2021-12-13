@@ -1,21 +1,15 @@
 import React, { useState } from "react";
-import {
-  Flex,
-  Heading,
-  Box,
-  Input,
-  InputGroup,
-  InputRightElement,
-} from "@chakra-ui/react";
+import { Flex, Heading, Box } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import { MyButton } from "./Button";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
-import { validateAuth } from "../utils/service";
 
 const Navbar = () => {
   const [navbarPos, setNavbarPos] = useState(false);
   const [opened, setOpened] = useState(false);
+
+  const isLogged = localStorage.getItem("logged");
 
   const handleStickScroll = (e) => {
     window.scrollY > 0 ? setNavbarPos(true) : setNavbarPos(false);
@@ -45,9 +39,19 @@ const Navbar = () => {
             DEVELOPERS
           </NavLink>
         </Box>
-        <NavLink to="/login">
-          <MyButton className="nav-login">Login</MyButton>
-        </NavLink>
+        {isLogged ? (
+          <NavLink to="/logout" className="nav-btn-login">
+            <MyButton className="nav-login" navScrolled={navbarPos}>
+              Logout
+            </MyButton>
+          </NavLink>
+        ) : (
+          <NavLink to="/login" className="nav-btn-login">
+            <MyButton className="nav-login" navScrolled={navbarPos}>
+              Login
+            </MyButton>
+          </NavLink>
+        )}
         <div
           onClick={() => {
             setOpened(!opened);

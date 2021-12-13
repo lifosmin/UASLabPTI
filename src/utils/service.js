@@ -6,7 +6,7 @@ export const getNews = async () => {
 };
 
 export const getBlogs = async () => {
-  const res = await axios.get("/news.json");
+  const res = await axios.get("/blogs.json");
   return res.data;
 };
 

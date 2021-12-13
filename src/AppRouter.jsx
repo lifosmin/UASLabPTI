@@ -33,6 +33,14 @@ const AppRouter = () => {
               }}
             />
             <Route path="/404" exact component={Errors} />
+            <Route
+              path="/Logout"
+              exact
+              render={() => {
+                localStorage.clear();
+                window.location.href = "/";
+              }}
+            />
             <Route path="/" exact render={() => <Redirect to="/News" />} />
             <Route path="/*" render={() => <Redirect to="/404" />} />
           </Switch>

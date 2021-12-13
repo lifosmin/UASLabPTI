@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Flex,
-  FormErrorMessage,
-} from "@chakra-ui/react";
+import { Flex, Text, Alert, AlertTitle } from "@chakra-ui/react";
+import { AlertIcon } from "@chakra-ui/react";
 import { MyButton } from "../components/Button";
 import { useForm } from "react-hook-form";
 import "../styles/Login.scss";
 import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -20,6 +16,7 @@ const Login = () => {
   } = useForm();
 
   const history = useHistory();
+  const location = useLocation();
 
   const onSubmit = (data) => {
     for (let i = 0; i < accoutList.length; i++) {
@@ -29,7 +26,7 @@ const Login = () => {
       ) {
         localStorage.setItem("logged", true);
         localStorage.setItem("logData", JSON.stringify(accoutList[i]));
-        history.push("/Blogs");
+        window.location.href = "/Blogs";
       } else {
         history.push("/login", {
           message: "You have entered incorrect email or password",
@@ -40,6 +37,12 @@ const Login = () => {
 
   return (
     <div className="login">
+      {location.state && (
+        <Alert status="error" width="max-content" borderRadius="10px" mb="1rem">
+          <AlertIcon />
+          <AlertTitle>{location.state.message}</AlertTitle>
+        </Alert>
+      )}
       <div className="login__card">
         {/* <div className="login__card__header">
           <h1 className="login_card_title">Login</h1>
@@ -55,6 +58,11 @@ const Login = () => {
             id="email"
             {...register("email", {
               required: "Please type your email!",
+              pattern: {
+                value:
+                  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                message: "Please enter valid email address",
+              },
             })}
           />
           <span>{errors.email && errors.email.message}</span>
