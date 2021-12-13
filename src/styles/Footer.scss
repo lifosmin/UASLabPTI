@@ -1,30 +1,28 @@
 @import "variables";
 
 footer {
-  background-color: grey;
+  background-color: rgba(239, 80, 77, 0.8);
+  box-shadow: 0px -5px 10px rgba(172, 56, 54, 0.5);
   padding: 50px var(--container-pad);
-  
-  
 }
-.footer{
+.footer {
   flex-direction: row;
   justify-content: space-between;
 
-  &__logo{
+  &__logo {
     justify-content: space-between;
     flex-direction: row;
-
   }
-  &__lv{
+  &__lv {
     height: 100%;
     width: 1px;
     background-color: black;
   }
-  &__navigation{
+  &__navigation {
     flex-direction: column;
     margin-left: 25px;
   }
-  &__copyright{
+  &__copyright {
     padding-left: 10px;
   }
 }
