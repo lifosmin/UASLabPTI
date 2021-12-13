@@ -5,7 +5,11 @@
     "date": "12 Desember 2021",
     "category": ["COVID-19", "Boris Johnson"],
     "image": "https://img.huffingtonpost.com/asset/61b662d720000013068d4ba9.jpeg?cache=pVlvTymhrw&ops=scalefit_720_noupscale&format=webp",
-    "content": "LONDON (AP) — Prime Minister Boris Johnson warned Sunday that Britain faces a “tidal wave” of infections from the omicron coronavirus variant, and announced a huge increase in booster vaccinations to strengthen defenses against it. In a televised statement, Johnson said everyone age 18 and older will be offered a third shot of vaccine by the end of this month in response to the omicron “emergency.” The previous target was the end of January. He said cases of the highly transmissible variant are doubling every two to three days in Britain, and “there is a tidal wave of omicron coming.”"
+    "author": "Charlie Frederico",
+    "content": [
+      "LONDON (AP) — Prime Minister Boris Johnson warned Sunday that Britain faces a “tidal wave” of infections from the omicron coronavirus variant, and announced a huge increase in booster vaccinations to strengthen defenses against it. In a televised statement, Johnson said everyone age 18 and older will be offered a third shot of vaccine by the end of this month in response to the omicron “emergency.”",
+      " The previous target was the end of January. He said cases of the highly transmissible variant are doubling every two to three days in Britain, and “there is a tidal wave of omicron coming.”"
+    ]
   },
   {
     "id": 2,
@@ -13,7 +17,11 @@
     "date": "12 Desember 2021",
     "category": ["Mexican Singer", "Funeral"],
     "image": "https://img.huffingtonpost.com/asset/61b64d9a2800008d7f7ec7f3.jpeg?ops=scalefit_720_noupscale&format=webp",
-    "content": "MEXICO CITY (AP) — Vicente Fernández, a beloved Mexican singer who was awarded three Grammys and nine Latin Grammys and inspired a new generation of performers, including his son Alejandro Fernández Jr., died on Sunday. He was 81 years old. Fernández was known for hits such as “El Rey,” “Volver, Volver” and “Lástima que seas ajena,” and his command of the ranchera and mariachi styles of music attracted fans far beyond Mexico’s borders."
+    "author": "Raphael Gregorius",
+    "content": [
+      "MEXICO CITY (AP) — Vicente Fernández, a beloved Mexican singer who was awarded three Grammys and nine Latin Grammys and inspired a new generation of performers, including his son Alejandro Fernández Jr., died on Sunday. He was 81 years old.",
+      " Fernández was known for hits such as “El Rey,” “Volver, Volver” and “Lástima que seas ajena,” and his command of the ranchera and mariachi styles of music attracted fans far beyond Mexico's borders."
+    ]
   },
   {
     "id": 3,
@@ -21,7 +29,11 @@
     "date": "8 Desember 2021",
     "category": ["Challenge", "Daily"],
     "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024/https://www.kevinanggara.com/wp-content/uploads/2021/12/IMG_5297-edited-1024x1024.jpg",
-    "content": "Sewaktu kecil, gue punya keinginan untuk menjadi pilot karena itu ada di daftar cita-cita kebanyakan anak SD. Semacam katalog model rambut di salon, tapi isinya profesi. Mulai dari dokter, pemadam kebakaran, polisi, astronot, sampe presiden. Pilot adalah profesi yang gue pilih karena dulu mikirnya simpel, gue pengin bisa jalan-jalan ke mana aja. Kalo gue bisa jadi pilot, tujuan itu akan tercapai."
+    "author": "Lifosmin Simon",
+    "content": [
+      "Sewaktu kecil, gue punya keinginan untuk menjadi pilot karena itu ada di daftar cita-cita kebanyakan anak SD. Semacam katalog model rambut di salon, tapi isinya profesi. Mulai dari dokter, pemadam kebakaran, polisi, astronot, sampe presiden.",
+      " Pilot adalah profesi yang gue pilih karena dulu mikirnya simpel, gue pengin bisa jalan-jalan ke mana aja. Kalo gue bisa jadi pilot, tujuan itu akan tercapai."
+    ]
   },
   {
     "id": 4,
@@ -29,7 +41,11 @@
     "date": "12 Juni 2020",
     "category": ["Manusia", "Sosial Media"],
     "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://www.kevinanggara.com/wp-content/uploads/2020/06/Kalkulator.jpeg",
-    "content": "Sekarang, akun Instagram gue punya sekitar lebih dari 900 ribu followers, yang kalo dikonversikan menjadi mata uang negara Kamboja terus dibelikan es kopi susu kekinian… bisa lah buat stok minum sampai 3 bulan ke depan. Followers segitu menurut gue sangat banyak untuk ukuran gue yang jarang bikin “konten” ini. Dari awal terjun ke dunia perkontenan, gue nggak punya ekspektasi apa-apa terhadap konten yang gue bikin. Gue nggak punya ekspektasi konten gue akan disukai sama orang banyak atau dinikmati sampai sekarang. Yang gue tau, gue bikin sesuatu karena memang gue lagi pengin bikin pada saat itu. Nggak mikirin output yang akan gue dapatkan di kemudian hari. Dengan alasan tadi, bukan hanya gue, tapi orang lain juga saat ini menganggap gue jarang bikin konten."
+    "author": "Nehemia Gueldi",
+    "content": [
+      "Sekarang, akun Instagram gue punya sekitar lebih dari 900 ribu followers, yang kalo dikonversikan menjadi mata uang negara Kamboja terus dibelikan es kopi susu kekinian… bisa lah buat stok minum sampai 3 bulan ke depan. Followers segitu menurut gue sangat banyak untuk ukuran gue yang jarang bikin “konten” ini. Dari awal terjun ke dunia perkontenan, gue nggak punya ekspektasi apa-apa terhadap konten yang gue bikin.",
+      " Gue nggak punya ekspektasi konten gue akan disukai sama orang banyak atau dinikmati sampai sekarang. Yang gue tau, gue bikin sesuatu karena memang gue lagi pengin bikin pada saat itu. Nggak mikirin output yang akan gue dapatkan di kemudian hari. Dengan alasan tadi, bukan hanya gue, tapi orang lain juga saat ini menganggap gue jarang bikin konten."
+    ]
   },
   {
     "id": 5,
@@ -37,7 +53,13 @@
     "date": "31 May 2020",
     "category": ["Blog", "Migrasi Hosting"],
     "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://www.kevinanggara.com/wp-content/uploads/2020/05/Kevin3-1024x576.jpg",
-    "content": "ya, udah lama banget nggak nulis di blog ini. Setahun? Dua tahun? Tiga tahun? Ah, yang udah lewat, ya udahlah nggak usah lewat lagi. Jadi, kesempatan ini akan gue gunakan untuk pemanasan, melemaskan jari-jari, serta mendinginkan kepala. Loh, emang sekarang lagi panas? Nggak gitu konsepnya, ya. Gue ngerasa semacam releasing stress aja kalo habis nulis. Jadi, ke mana aja gue? Nggak ke mana-mana. Emang nggak nulis aja di blog, tapi gue masih tetap nulis kok. Entah itu nulis email izin nggak masuk ke dosen (tertentu), tugas kuliah termasuk skripsi yang akhirnya lulus juga kuliahnya, atau skrip video-video gue."
+    "author": "Fernando Khorasani",
+    "content": [
+      "ya, udah lama banget nggak nulis di blog ini. Setahun? Dua tahun? Tiga tahun? Ah, yang udah lewat, ya udahlah nggak usah lewat lagi. Jadi, kesempatan ini akan gue gunakan untuk pemanasan, melemaskan jari-jari, serta mendinginkan kepala.",
+      " Loh, emang sekarang lagi panas?",
+      " Nggak gitu konsepnya, ya. Gue ngerasa semacam releasing stress aja kalo habis nulis. Jadi, ke mana aja gue? Nggak ke mana-mana.",
+      " Emang nggak nulis aja di blog, tapi gue masih tetap nulis kok. Entah itu nulis email izin nggak masuk ke dosen (tertentu), tugas kuliah termasuk skripsi yang akhirnya lulus juga kuliahnya, atau skrip video-video gue."
+    ]
   },
   {
     "id": 6,
@@ -45,6 +67,10 @@
     "date": "27 Februari 2016",
     "category": ["Dosen", "Kuliah"],
     "image": "https://2.bp.blogspot.com/-Ue6Q2gHHO_8/VtF2kQ8d9eI/AAAAAAAACic/jGmrlbmQLtI/s1600/kuliah.jpg",
-    "content": "Gue udah masuk kuliah lagi. SKS-nya memang lebih dikit. Tapi, tugasnya jauh lebih banyak dan ribet. Dosen-dosen baik layaknya orangtua sendiri di semester dua udah mulai berkurang. Yang ada hanya dosen-dosen berhati killer di balik tampang yang lembut seperti anak kecil. Dosen yang nggak memberikan mahasiswanya memotret presentasi atau catatan di papan lewat handphone. Dosen yang hanya menerima acc (persetujuan) di waktu-waktu tertentu. Dosen yang sering absen dan ngadain kelas pengganti seenak jidat."
+    "author": "Bonifasius Ariesto Adrian Finantyo",
+    "content": [
+      "Gue udah masuk kuliah lagi. SKS-nya memang lebih dikit. Tapi, tugasnya jauh lebih banyak dan ribet. Dosen-dosen baik layaknya orangtua sendiri di semester dua udah mulai berkurang. Yang ada hanya dosen-dosen berhati killer di balik tampang yang lembut seperti anak kecil.",
+      " Dosen yang nggak memberikan mahasiswanya memotret presentasi atau catatan di papan lewat handphone. Dosen yang hanya menerima acc (persetujuan) di waktu-waktu tertentu. Dosen yang sering absen dan ngadain kelas pengganti seenak jidat."
+    ]
   }
 ]
