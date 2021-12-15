@@ -13,11 +13,11 @@ const Footer = () => {
   return (
     <footer>
       <Flex className="footer">
-        <Flex w="20%" className="footer__logo">
+        <Flex  className="footer__logo">
           <h1>Berita PTI</h1>
           <div className="footer__lv"></div>
         </Flex>
-        <Flex w="50%" className="footer__navigation">
+        <Flex  className="footer__navigation">
           <Flex>
             <NavLink p="10px" className="link" to="/News">
               News
