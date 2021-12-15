@@ -26,7 +26,12 @@ const Navbar = () => {
         className="navbar__container"
       >
         <NavLink to="/" className="nav-brand">
-          <Image src="./logo-med.png" height="2rem" mt="5px" mr="0.2rem" />
+          <Image
+            src="/assets/logo-med.png"
+            height="2rem"
+            mt="5px"
+            mr="0.2rem"
+          />
           <Heading margin="0">Berita PTI</Heading>
         </NavLink>
         <Box className={navbarPos ? "nav-items scrolled" : "nav-items"}>

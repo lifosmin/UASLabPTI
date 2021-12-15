@@ -10,10 +10,29 @@
 
   &__title {
     text-align: center;
+
+    @media screen and (max-width: 48em) {
+      font-size: 1.8rem;
+    }
+
+    /* breakpoints sm */
+    @media screen and (max-width: 30em) {
+      font-size: 1.5rem;
+    }
   }
 
   &__author {
     text-align: center;
+    margin-top: 0.5rem !important;
+
+    @media screen and (max-width: 48em) {
+      font-size: 1.2rem;
+    }
+
+    /* breakpoints sm */
+    @media screen and (max-width: 30em) {
+      font-size: 1rem;
+    }
   }
 
   &__img {
@@ -26,6 +45,16 @@
       width: 60%;
       height: auto;
       border-radius: 5px;
+
+      /* breakpoints md */
+      @media screen and (max-width: 48em) {
+        width: 80%;
+      }
+
+      /* breakpoints sm */
+      @media screen and (max-width: 30em) {
+        width: 100%;
+      }
     }
   }
 
@@ -36,5 +65,26 @@
 
   &__cat {
     margin-top: 2rem !important;
+    font-weight: 700;
   }
+}
+
+/* breakpoints 2xl */
+@media screen and (max-width: 96em) {
+}
+
+/* breakpoints xl */
+@media screen and (max-width: 80em) {
+}
+
+/* breakpoints lg */
+@media screen and (max-width: 62em) {
+}
+
+/* breakpoints md */
+@media screen and (max-width: 48em) {
+}
+
+/* breakpoints sm */
+@media screen and (max-width: 30em) {
 }

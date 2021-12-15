@@ -1,8 +1,9 @@
 import { Skeleton } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import "../styles/Article.scss";
 import { getNews, getBlogs } from "../utils/service";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2";
+import "../styles/Article.scss";
 
 const transition = {
   duration: 0.5,
@@ -59,21 +60,27 @@ const Article = ({ type }) => {
   useEffect(() => {
     document.title = `${type === "news" ? "News" : "Blogs"} List | Berita PTI`;
 
-    try {
-      if (type === "news") {
-        getNews().then((response) => {
-          setArticle(response);
-          setIsloaded(true);
+    const fetchData = async () => {
+      try {
+        let response;
+        if (type === "news") {
+          response = await getNews();
+        } else if (type === "blogs") {
+          response = await getBlogs();
+        }
+        setArticle(response);
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "ERROR!",
+          text: error,
         });
-      } else if (type === "blogs") {
-        getBlogs().then((response) => {
-          setArticle(response);
-          setIsloaded(true);
-        });
+      } finally {
+        setIsloaded(true);
       }
-    } catch (err) {
-      console.log(err);
-    }
+    };
+
+    fetchData();
   }, []);
 
   if (!isLoaded) {

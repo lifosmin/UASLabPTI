@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getDeveloper } from "../utils/service";
 import { Skeleton } from "@chakra-ui/react";
+import Swal from "sweetalert2";
 import "../styles/Developer.scss";
 
 const transition = {
@@ -60,15 +61,23 @@ const Developer = () => {
   useEffect(() => {
     document.title = "Developers | Berita PTI";
 
-    try {
-      getDeveloper().then((response) => {
+    const fetchData = async () => {
+      let response;
+      try {
+        response = await getDeveloper();
         setDeveloper(response);
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "ERROR!",
+          text: error,
+        });
+      } finally {
         setIsloaded(true);
-      });
-      console.log("data fetched successfuly");
-    } catch (err) {
-      console.log(err);
-    }
+      }
+    };
+
+    fetchData();
   }, []);
 
   if (!isLoaded) {

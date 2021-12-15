@@ -1,5 +1,11 @@
 import axios from "axios";
 
+const baseURL = "http://api-login-pti.herokuapp.com";
+const header = {
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*",
+};
+
 export const getNews = async () => {
   const res = await axios.get("/data/news.json");
   return res.data;
@@ -15,8 +21,14 @@ export const getDeveloper = async () => {
   return res.data;
 };
 
-export const validateAuth = () => {
-  const data = JSON.parse(localStorage.getItem("logData"));
-  if (data !== null) return true;
-  else return false;
+export const login = async (email, password) => {
+  const res = await axios.post(
+    `${baseURL}/api/login_user`,
+    {
+      email: email,
+      password: password,
+    },
+    { header: header }
+  );
+  return res.data;
 };

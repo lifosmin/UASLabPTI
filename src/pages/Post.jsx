@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { getBlogs, getNews } from "../utils/service";
 import { motion } from "framer-motion";
+import { SkeletonText, Skeleton } from "@chakra-ui/react";
 import "../styles/Post.scss";
 
 const transition = {
@@ -17,26 +18,60 @@ const cardVariants = {
 
 const Post = () => {
   const { type, id } = useParams();
-  const [article, setArticle] = useState([]);
+  const [post, setPost] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     document.title = "Post | Berita PTI";
 
-    try {
-      if (type.toLowerCase() === "news") {
-        getNews().then((res) => setArticle(res));
-      } else if (type.toLowerCase() === "blogs") {
-        getBlogs().then((res) => setArticle(res));
+    const fetchData = async () => {
+      let response;
+      try {
+        if (type.toLowerCase() === "news") {
+          response = await getNews();
+        } else if (type.toLowerCase() === "blogs") {
+          response = await getBlogs();
+        }
+        setPost(response.filter((data) => data.id == id)[0] || null);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoaded(true);
       }
-    } catch (error) {
-      console.log(error);
-    }
+    };
+
+    fetchData();
   }, []);
 
-  const post = article.filter((data) => data.id == id)[0];
-  console.log(post);
-
-  if (post) {
+  if (isLoaded) {
+    if (post !== null) {
+      return (
+        <motion.div
+          className="post"
+          variants={cardVariants}
+          initial="rest"
+          animate="enter"
+          exit="exit"
+        >
+          <h1 className="post__title">{post.title}</h1>
+          <h3 className="post__author">
+            {post.author}, {post.date}
+          </h3>
+          <div className="post__img">
+            <img src={post.image} alt="Article image" loading="lazy" />
+          </div>
+          {post.content.map((data, index) => (
+            <p className="post__content" key={index}>
+              {data}
+            </p>
+          ))}
+          <p className="post__cat">Category: {post.category.join(", ")}</p>
+        </motion.div>
+      );
+    } else {
+      return <Redirect to="/404" />;
+    }
+  } else {
     return (
       <motion.div
         className="post"
@@ -45,26 +80,11 @@ const Post = () => {
         animate="enter"
         exit="exit"
       >
-        <h1 className="post__title">{post.title}</h1>
-        <h3 className="post__author">
-          {post.author}, {post.date}
-        </h3>
-        <div className="post__img">
-          <img src={post.image} alt="Article image" />
-        </div>
-        {post.content.map((data, index) => (
-          <p className="post__content" key={index}>
-            {data}
-          </p>
-        ))}
-        <p className="post__cat">Category: {post.category.join(", ")}</p>
+        <Skeleton h="1.2rem" w="50%" m="0 auto" />
+        <Skeleton h="1.2rem" w="20%" m="1rem auto" />
+        <Skeleton width={{ base: "100%", md: "60%" }} h="400px" m="2rem auto" />
+        <SkeletonText mt="1rem" />
       </motion.div>
-    );
-  } else {
-    return (
-      <div>
-        <h1>sekeleton</h1>
-      </div>
     );
   }
 };
