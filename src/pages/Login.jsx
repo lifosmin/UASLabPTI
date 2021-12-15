@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/Login.scss";
-import { login } from "../utils/service";
+import { authLogin, login } from "../utils/service";
 
 const transition = {
   duration: 0.5,
@@ -42,42 +42,18 @@ const Login = () => {
   }, []);
 
   const onSubmit = (data) => {
-    let status = false;
-    for (let i = 0; i < accoutList.length; i++) {
-      if (
-        data.email === accoutList[i].email &&
-        data.password === accoutList[i].password
-      ) {
-        status = true;
-        localStorage.setItem("logged", true);
-        localStorage.setItem("logData", JSON.stringify(accoutList[i]));
-        window.location.href = "/Blogs";
-        break;
-      }
-    }
-
-    if (!status) {
+    let token = authLogin(data.email, data.password);
+    if (token) {
+      localStorage.setItem("logged", true);
+      localStorage.setItem("token", token);
+      window.location.href = "/Blogs";
+    } else {
       history.push("/Login", {
         status: "error",
         message: "You have entered incorrect email or password",
       });
     }
   };
-
-  // const onSubmit = async (data) => {
-  //   let response;
-  //   try {
-  //     response = await login(data.email, data.password);
-  //     localStorage("access-token", response.data.token);
-  //     window.location.href = "/Blogs";
-  //   } catch (error) {
-  //     history.push("/Login", {
-  //       status: "error",
-  //       message: response.message,
-  //     });
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <motion.div className="login" initial="rest" animate="enter" exit="exit">
@@ -142,14 +118,3 @@ const Login = () => {
 };
 
 export default Login;
-
-const accoutList = [
-  {
-    email: "bonifasius.finantyo@student.umn.ac.id",
-    password: "12345678",
-  },
-  {
-    email: "admin@beritapti.umn.ac.id",
-    password: "12345678",
-  },
-];

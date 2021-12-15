@@ -1,11 +1,5 @@
 import axios from "axios";
 
-const baseURL = "http://api-login-pti.herokuapp.com";
-const header = {
-  "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": "*",
-};
-
 export const getNews = async () => {
   const res = await axios.get("/data/news.json");
   return res.data;
@@ -21,14 +15,29 @@ export const getDeveloper = async () => {
   return res.data;
 };
 
-export const login = async (email, password) => {
-  const res = await axios.post(
-    `${baseURL}/api/login_user`,
-    {
-      email: email,
-      password: password,
-    },
-    { header: header }
-  );
-  return res.data;
+export const authLogin = (email, password) => {
+  // Asumsikan ini fungsi buat login lewat API
+  for (let i = 0; i < accoutList.length; i++) {
+    if (email === accoutList[i].email && password === accoutList[i].password) {
+      return JSON.stringify(accoutList[i]);
+    }
+  }
+};
+
+const accoutList = [
+  {
+    email: "bonifasius.finantyo@student.umn.ac.id",
+    password: "12345678",
+  },
+  {
+    email: "admin@beritapti.umn.ac.id",
+    password: "12345678",
+  },
+];
+
+export const authCheckStatus = () => {
+  // Asumsikan ini fungsi buat check login lewat API
+  const token = localStorage.getItem("token");
+  if (token !== null) return true;
+  else return false;
 };

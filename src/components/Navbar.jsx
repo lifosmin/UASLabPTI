@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Flex, Heading, Box, Image } from "@chakra-ui/react";
-import { Search2Icon } from "@chakra-ui/icons";
 import { MyButton } from "./Button";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
+import { authCheckStatus } from "../utils/service";
 
 const Navbar = () => {
   const [navbarPos, setNavbarPos] = useState(false);
   const [opened, setOpened] = useState(false);
 
-  const isLogged = localStorage.getItem("logged");
+  const isLogged = authCheckStatus();
 
   const handleStickScroll = (e) => {
     window.scrollY > 0 ? setNavbarPos(true) : setNavbarPos(false);
@@ -64,9 +64,9 @@ const Navbar = () => {
           }}
           className={opened ? "hamburger active" : "hamburger"}
         >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <span className={`bar ${navbarPos ? "scrolled" : ""}`}></span>
+          <span className={`bar ${navbarPos ? "scrolled" : ""}`}></span>
+          <span className={`bar ${navbarPos ? "scrolled" : ""}`}></span>
         </div>
       </Flex>
 
@@ -76,13 +76,25 @@ const Navbar = () => {
         }`}
       >
         <Box className="mobile-nav-container" style={{}}>
-          <NavLink className="link-mobile" to="/News">
+          <NavLink
+            className="link-mobile"
+            to="/News"
+            onClick={() => setOpened(!opened)}
+          >
             NEWS
           </NavLink>
-          <NavLink className="link-mobile" to="/Blogs">
+          <NavLink
+            className="link-mobile"
+            to="/Blogs"
+            onClick={() => setOpened(!opened)}
+          >
             BLOGS
           </NavLink>
-          <NavLink className="link-mobile" to="/Developers">
+          <NavLink
+            className="link-mobile"
+            to="/Developers"
+            onClick={() => setOpened(!opened)}
+          >
             DEVELOPERS
           </NavLink>
         </Box>
