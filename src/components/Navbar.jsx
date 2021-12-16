@@ -9,7 +9,7 @@ const Navbar = () => {
   const [navbarPos, setNavbarPos] = useState(false);
   const [opened, setOpened] = useState(false);
 
-  const isLogged = authCheckStatus();
+  const isLogged = authCheckStatus().status;
 
   const handleStickScroll = (e) => {
     window.scrollY > 0 ? setNavbarPos(true) : setNavbarPos(false);
@@ -24,12 +24,13 @@ const Navbar = () => {
         alignItems="center"
         justifyContent="space-between"
         className="navbar__container"
+        px={{ base: "2rem", md: "var(--container-pad)" }}
       >
         <NavLink to="/" className="nav-brand">
           <Image
             src="/assets/logo-med.png"
             height="2rem"
-            mt="5px"
+            mt="2px"
             mr="0.2rem"
           />
           <Heading margin="0">Berita PTI</Heading>
@@ -96,6 +97,13 @@ const Navbar = () => {
             onClick={() => setOpened(!opened)}
           >
             DEVELOPERS
+          </NavLink>
+          <NavLink
+            className="link-mobile"
+            to="/Logout"
+            onClick={() => setOpened(!opened)}
+          >
+            LOGOUT
           </NavLink>
         </Box>
       </Box>

@@ -44,8 +44,7 @@ const Login = () => {
   const onSubmit = (data) => {
     let token = authLogin(data.email, data.password);
     if (token) {
-      localStorage.setItem("logged", true);
-      localStorage.setItem("token", token);
+      localStorage.setItem("beritapti_token", token);
       window.location.href = "/Blogs";
     } else {
       history.push("/Login", {

@@ -3,6 +3,7 @@ import { Redirect, useParams } from "react-router-dom";
 import { getBlogs, getNews } from "../utils/service";
 import { motion } from "framer-motion";
 import { SkeletonText, Skeleton } from "@chakra-ui/react";
+import { Swal } from "sweetalert2";
 import "../styles/Post.scss";
 
 const transition = {
@@ -34,7 +35,11 @@ const Post = () => {
         }
         setPost(response.filter((data) => data.id == id)[0] || null);
       } catch (error) {
-        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "ERROR!",
+          text: error,
+        });
       } finally {
         setIsLoaded(true);
       }

@@ -31,7 +31,7 @@ const AppRouter = () => {
             <Route
               path="/Logout"
               render={() => {
-                localStorage.clear();
+                localStorage.removeItem("beritapti_token");
                 return (
                   <Redirect
                     to={{

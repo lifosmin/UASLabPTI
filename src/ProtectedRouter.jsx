@@ -3,12 +3,22 @@ import { Route, Redirect } from "react-router-dom";
 import { authCheckStatus } from "./utils/service";
 
 const ProtectedRouter = (props, { ...options }) => {
-  const status = authCheckStatus();
+  const authStatus = authCheckStatus();
 
-  if (status) {
+  if (authStatus.status) {
     return <Route {...options}>{props.children}</Route>;
   } else {
-    return <Redirect to="/Login" />;
+    return (
+      <Redirect
+        to={{
+          pathname: "/Login",
+          state: {
+            status: "error",
+            message: authStatus.message,
+          },
+        }}
+      />
+    );
   }
 };
 
